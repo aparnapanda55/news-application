@@ -74,9 +74,17 @@ class Description extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: Container(
-        child: Text(
-          text,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Card(
+          elevation: 10,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              text.replaceAll('<ol><li>', ' '),
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
         ),
       ),
     );
